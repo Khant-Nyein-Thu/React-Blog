@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Create from "./Create";
 import Edit from "./Edit";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export const List = () => {
   const [title, setTitle] = useState("");
@@ -107,39 +109,57 @@ export const List = () => {
   } else {
     return (
       <div className="text-center max-auto p-3">
-        <h1 className="text-primary">All Posts - Edited</h1>
+        <h1
+          className="text-primary"
+          style={{ fontFamily: "Roboto, sans-serif" }}
+        >
+          All Posts - Edited
+        </h1>
         {!posts.length ? (
-          <h1 className="text-danger mb-2">Nothing to show here</h1>
+          <h1
+            className="text-danger mb-2"
+            style={{ fontFamily: "Roboto, sans-serif" }}
+          >
+            Nothing to show here
+          </h1>
         ) : (
           <table className="table table-striped">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th style={{ fontFamily: "Roboto, sans-serif" }}>ID</th>
+                <th style={{ fontFamily: "Roboto, sans-serif" }}>Title</th>
+                <th style={{ fontFamily: "Roboto, sans-serif" }}>Content</th>
+                <th style={{ fontFamily: "Roboto, sans-serif" }}>Edit</th>
+                <th style={{ fontFamily: "Roboto, sans-serif" }}>Delete</th>
               </tr>
             </thead>
             <tbody>
               {posts.map((post) => (
                 <tr key={post.id}>
-                  <td>{post.id}</td>
-                  <td>{post.title}</td>
-                  <td>{post.content}</td>
-                  <td>
+                  <td style={{ fontFamily: "Roboto, sans-serif" }}>
+                    {post.id}
+                  </td>
+                  <td style={{ fontFamily: "Roboto, sans-serif" }}>
+                    {post.title}
+                  </td>
+                  <td style={{ fontFamily: "Roboto, sans-serif" }}>
+                    {post.content}
+                  </td>
+                  <td style={{ fontFamily: "Roboto, sans-serif" }}>
                     <button
                       onClick={() => editPost(post.id)}
                       className="btn btn-primary"
                     >
+                      <FontAwesomeIcon icon={faEdit} />
                       Edit
                     </button>
                   </td>
-                  <td>
+                  <td style={{ fontFamily: "Roboto, sans-serif" }}>
                     <button
                       onClick={() => deletePost(post.id)}
                       className="btn btn-danger"
                     >
+                      <FontAwesomeIcon icon={faTrash} />
                       Delete
                     </button>
                   </td>
@@ -149,7 +169,7 @@ export const List = () => {
           </table>
         )}
         <button className="btn btn-primary" onClick={toggleCreate}>
-          Create New
+          <FontAwesomeIcon icon={faPlus} /> Create New
         </button>
       </div>
     );

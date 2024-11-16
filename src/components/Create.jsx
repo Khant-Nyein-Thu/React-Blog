@@ -10,7 +10,12 @@ const Create = ({
 }) => {
   return (
     <>
-      <h1 className="text-center mt-3">Create New Post</h1>
+      <h1
+        className="text-center mt-3"
+        style={{ fontFamily: "Roboto, sans-serif" }}
+      >
+        Create New Post
+      </h1>
       <form action="" className="w-50 mx-auto p-3 my-3">
         <input
           ref={getTitle}
@@ -18,12 +23,14 @@ const Create = ({
           type="text"
           className="form-control mb-3"
           placeholder="title"
+          style={{ fontFamily: "Roboto, sans-serif" }}
         />
         <textarea
           ref={getContent}
           onChange={saveContentToState}
           className="form-control mb-3"
           placeholder="content"
+          style={{ fontFamily: "Roboto, sans-serif" }}
         ></textarea>
         <button onClick={savePost} className="btn btn-primary me-2">
           Create
