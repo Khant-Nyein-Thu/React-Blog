@@ -17,9 +17,7 @@ export const List = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [editId, setEditId] = useState(false);
 
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
+  useEffect(() => {}, [posts]);
 
   function saveTitleToState(e) {
     setTitle(e.target.value);
