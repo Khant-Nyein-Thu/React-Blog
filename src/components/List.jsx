@@ -107,7 +107,7 @@ export const List = () => {
   } else {
     return (
       <div className="text-center max-auto p-3">
-        <h1 className="text-primary">All Posts</h1>
+        <h1 className="text-primary">All Posts - Edited</h1>
         {!posts.length ? (
           <h1 className="text-danger mb-2">Nothing to show here</h1>
         ) : (
